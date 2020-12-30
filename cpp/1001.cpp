@@ -25,16 +25,16 @@ Sample Output:
 using namespace std;
 int main()
 {
-    int a, b;
+    int a, b; //定义输入数a,b
     cin >> a >> b;
-    int ans = a + b;
+    int ans = a + b; //计算a+b
     if (ans == 0)
         cout << 0;
     else
     {
-        vector<int> *v = new vector<int>();
+        vector<int> *v = new vector<int>(); //用vector模拟链表，每次取得的末三位插入到第一位以保证顺序
         while (ans != 0)
-        {
+        { //每次提取ans的末3位，并直接十进制右移3位。
             v->insert(v->begin(), ans % 1000);
             ans /= 1000;
         }
